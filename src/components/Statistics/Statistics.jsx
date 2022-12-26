@@ -1,4 +1,3 @@
-import data from '../asssets/data.json';
 import PropTypes from 'prop-types';
 
 export const Statistics = ({ stats, title }) => {

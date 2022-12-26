@@ -1,4 +1,3 @@
-import friends from '../asssets/friends.json';
 import PropTypes from 'prop-types';
 
 export const FriendList = ({ friends }) => {
