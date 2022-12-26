@@ -1,4 +1,4 @@
-import transactions from './transactions.json';
+import transactions from '../asssets/transactions.json';
 import PropTypes from 'prop-types';
 
 export const TransactionHistory = ({ items }) => {

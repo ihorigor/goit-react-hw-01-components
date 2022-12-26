@@ -1,4 +1,4 @@
-import user from './user.json';
+import user from '../asssets/user.json';
 import PropTypes from 'prop-types';
 
 export const Profile = ({
