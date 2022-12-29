@@ -1,9 +1,11 @@
+import { Box } from 'components/Box/Box';
 import PropTypes from 'prop-types';
+import css from './TransactionHistory.module.css';
 
 export const TransactionHistory = ({ items }) => {
   return (
-    <div>
-      <table className="transaction-history">
+    <Box as="section">
+      <table className={css.transactionHistory}>
         <thead>
           <tr>
             <th>Type</th>
@@ -13,18 +15,16 @@ export const TransactionHistory = ({ items }) => {
         </thead>
 
         <tbody>
-          {items.map(({ id, type, amount, currency }) => {
-            return (
-              <tr key={id}>
-                <td>{type}</td>
-                <td>{amount}</td>
-                <td>{currency}</td>
-              </tr>
-            );
-          })}
+          {items.map(({ id, type, amount, currency }) => (
+            <tr key={id}>
+              <td>{type}</td>
+              <td>{amount}</td>
+              <td>{currency}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
-    </div>
+    </Box>
   );
 };
 
@@ -36,5 +36,5 @@ TransactionHistory.propTypes = {
       amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };
