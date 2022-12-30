@@ -8,10 +8,10 @@ function getRandomHexColor() {
     .toUpperCase()}`;
 }
 
-export const Statistics = ({ stats, title = null }) => {
+export const Statistics = ({ stats, title }) => {
   return (
     <Box m="4" as="section">
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
 
       <Box
         p="4"

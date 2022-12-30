@@ -1,6 +1,7 @@
 import { Box } from 'components/Box/Box';
 import PropTypes from 'prop-types';
-import { Img, Status } from './FriendList.styled';
+
+import { FriendListItem } from './FriendListItem/FriendListItem';
 
 export const FriendList = ({ friends }) => {
   return (
@@ -12,25 +13,14 @@ export const FriendList = ({ friends }) => {
         alignContent="center"
         flexDirection="column"
       >
-        {friends.map(({ avatar, name, isOnline = true, id }) => {
-          return (
-            <Box
-              pt="4"
-              as="li"
-              position="relative"
-              display="flex"
-              alignItems="center"
-              alignContent="center"
-              justifyContent="center"
-              width="100px"
-              key={id}
-            >
-              <Status>{isOnline}</Status>
-              <Img src={avatar} alt="User avatar" />
-              <p className="name">{name}</p>
-            </Box>
-          );
-        })}
+        {friends.map(({ avatar, name, isOnline, id }) => (
+          <FriendListItem
+            key={id}
+            avatar={avatar}
+            name={name}
+            isOnline={isOnline}
+          />
+        ))}
       </Box>
     </Box>
   );
